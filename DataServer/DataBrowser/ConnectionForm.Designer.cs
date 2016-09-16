@@ -34,6 +34,8 @@
             this.cbxAuthType = new System.Windows.Forms.ComboBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnTest = new System.Windows.Forms.Button();
+            this.lblConnecting = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOk
@@ -63,6 +65,7 @@
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(168, 20);
             this.txtServer.TabIndex = 2;
+            this.txtServer.Text = ".\\sqlexpress";
             // 
             // cbxAuthType
             // 
@@ -70,25 +73,43 @@
             this.cbxAuthType.Items.AddRange(new object[] {
             "Windows Authentication",
             "SQL Server Authentication"});
-            this.cbxAuthType.Location = new System.Drawing.Point(104, 54);
+            this.cbxAuthType.Location = new System.Drawing.Point(104, 53);
             this.cbxAuthType.Name = "cbxAuthType";
             this.cbxAuthType.Size = new System.Drawing.Size(167, 21);
             this.cbxAuthType.TabIndex = 3;
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(103, 81);
+            this.txtUserName.Location = new System.Drawing.Point(103, 80);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(168, 20);
             this.txtUserName.TabIndex = 4;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(103, 107);
+            this.txtPassword.Location = new System.Drawing.Point(103, 106);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(168, 20);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(103, 132);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(168, 23);
+            this.btnTest.TabIndex = 6;
+            this.btnTest.Text = "Test Connection";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
+            // lblConnecting
+            // 
+            this.lblConnecting.AutoSize = true;
+            this.lblConnecting.Location = new System.Drawing.Point(104, 162);
+            this.lblConnecting.Name = "lblConnecting";
+            this.lblConnecting.Size = new System.Drawing.Size(0, 13);
+            this.lblConnecting.TabIndex = 7;
             // 
             // ConnectionForm
             // 
@@ -97,6 +118,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.lblConnecting);
+            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.cbxAuthType);
@@ -125,5 +148,7 @@
         private System.Windows.Forms.ComboBox cbxAuthType;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Label lblConnecting;
     }
 }

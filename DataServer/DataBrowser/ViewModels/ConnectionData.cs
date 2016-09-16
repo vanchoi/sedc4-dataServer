@@ -13,9 +13,16 @@ namespace DataBrowser.ViewModels
         public string Username { get; set; }
         public string Password { get; set; }
 
-        internal object GetConnectionString()
+        internal string GetConnectionString()
         {
-            throw new NotImplementedException();
+            if (AuthType == AuthenticationType.SqlServer)
+            {
+                return $"Server={ServerName};Database=master;User Id={Username}; Password = {Password};";
+            }
+            else
+            {
+                return $"Server={ServerName};Database=master;Trusted_Connection=True;";
+            }
         }
     }
 }
