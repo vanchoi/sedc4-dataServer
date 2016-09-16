@@ -12,5 +12,10 @@ namespace DataBrowser.ViewModels
         public AuthenticationType AuthType { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+
+        internal object GetConnectionString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
