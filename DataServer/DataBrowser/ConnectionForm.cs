@@ -16,5 +16,15 @@ namespace DataBrowser
         {
             InitializeComponent();
         }
+
+        private void ConnectionForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

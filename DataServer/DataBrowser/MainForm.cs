@@ -20,7 +20,11 @@ namespace DataBrowser
         private void btnConnect_Click(object sender, EventArgs e)
         {
             var connectionForm = new ConnectionForm();
-            connectionForm.ShowDialog();
+            if (connectionForm.ShowDialog() == DialogResult.OK)
+            {
+                //get connection parameters
+                var connectionData = connectionForm.GetConnectionData();
+            }
         }
     }
 }
