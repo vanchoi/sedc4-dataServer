@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBrowser.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,18 @@ namespace DataBrowser
         private void btnOk_Click(object sender, EventArgs e)
         {
 
+        }
+
+        internal ConnectionData GetConnectionData()
+        {
+            var result = new ConnectionData
+            {
+                ServerName = txtServer.Text,
+                AuthType = (cbxAuthType.SelectedIndex == 0) ? AuthenticationType.Windows : AuthenticationType.SqlServer,
+                Username = txtUserName.Text,
+                Password = txtPassword.Text
+            };
+            return result;
         }
     }
 }
